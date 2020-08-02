@@ -74,7 +74,7 @@ class MovielyState extends State<Moviely> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Movie Zone")),
+      appBar: AppBar(title: Text("Moviely")),
       body: SingleChildScrollView(
         child: Container(
           child: Column(
@@ -108,71 +108,76 @@ class MovielyState extends State<Moviely> {
               ),
               Container(
                 padding: EdgeInsets.only(top: 10),
-                height: 500,
+                height: 600,
                 child: SingleChildScrollView(
                   child: Card(
                     elevation: 5,
                     child: Container(
-                      margin: EdgeInsets.only(left: 5),
+                      margin: EdgeInsets.only(left: 10),
                       padding: EdgeInsets.only(top: 10),
                       child: Column(
                         children: [
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Image.network("$poster", height: 300, width: 300),
+                              Container(
+                                child: Image.network("$poster"),
+                                height: 300,
+                                width: 300,
+                                padding: EdgeInsets.only(left: 80),
+                              ),
                               Padding(padding: EdgeInsets.only(top: 15)),
                               Text(
-                                "Title :$title",
+                                "Title: $title",
                                 style: TextStyle(
                                   fontSize: 18,
                                 ),
                               ),
                               Padding(padding: EdgeInsets.only(top: 10)),
                               Text(
-                                "Release Year:$year",
+                                "Release Year: $year",
                                 style: TextStyle(
                                   fontSize: 18,
                                 ),
                               ),
                               Padding(padding: EdgeInsets.only(top: 10)),
                               Text(
-                                "Runtime : $runtime",
+                                "Runtime: $runtime",
                                 style: TextStyle(
                                   fontSize: 18,
                                 ),
                               ),
                               Padding(padding: EdgeInsets.only(top: 10)),
                               Text(
-                                "Director : $director",
+                                "Director: $director",
                                 style: TextStyle(
                                   fontSize: 18,
                                 ),
                               ),
                               Padding(padding: EdgeInsets.only(top: 10)),
                               Text(
-                                "Boxoffice : $boxoffice",
+                                "Boxoffice: $boxoffice",
                                 style: TextStyle(
                                   fontSize: 18,
                                 ),
                               ),
                               Padding(padding: EdgeInsets.only(top: 10)),
                               Text(
-                                "Country : $country",
+                                "Country: $country",
                                 style: TextStyle(
                                   fontSize: 18,
                                 ),
                               ),
                               Padding(padding: EdgeInsets.only(top: 10)),
                               Text(
-                                "Actors : $actors",
+                                "Actors: $actors",
                                 style: TextStyle(
                                   fontSize: 18,
                                 ),
                               ),
                               Padding(padding: EdgeInsets.only(top: 10)),
                               Text(
-                                "Plot : $plot",
+                                "Plot: $plot",
                                 style: TextStyle(
                                   fontSize: 18,
                                 ),
