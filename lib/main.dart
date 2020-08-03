@@ -49,7 +49,7 @@ class MovielyState extends State<Moviely> {
   Future<String> getJsonData() async {
     res = await http.get(
         Uri.encodeFull(
-            "http://omdbapi.com/?apikey=7c01d414+&t=${movieController.text}"),
+            "http://omdbapi.com/?apikey=e028e2d1+&t=${movieController.text}"),
         headers: {"Accept": "application/json"});
 
     setState(() {
