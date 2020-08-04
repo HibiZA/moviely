@@ -26,25 +26,21 @@ class Moviely extends StatefulWidget {
 
 class MovielyState extends State<Moviely> {
   final String url = "";
-  TextEditingController movieController =
-      TextEditingController(text: "ms dhoni");
+  TextEditingController movieController = TextEditingController(text: "");
   var res;
   var conv;
   //movie variables
-  String title = "M.S. Dhoni: The Untold Story";
-  String year = "30 Sep 2016";
-  String poster =
-      "https://m.media-amazon.com/images/M/MV5BZjAzZjZiMmQtMDZmOC00NjVmLTkyNTItOGI2Mzg4NTBhZTA1XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg";
-  String runtime = "184 min";
-  String director = "Neeraj Pandey";
+  String title = "";
+  String year = "";
+  String poster = "";
+  String runtime = "";
+  String director = "";
 
-  String imdbRating = "7.7";
-  String boxoffice = "\$1,782,795";
-  String country = "India";
-  String actors =
-      "Sushant Singh Rajput, Kiara Advani, Anupam Kher, Disha Patani";
-  String plot =
-      "The untold story of Mahendra Singh Dhoni's journey from ticket collector to trophy collector - the world-cup-winning captain of the Indian Cricket Team.";
+  String imdbRating = "";
+  String boxoffice = "";
+  String country = "";
+  String actors = "";
+  String plot = "";
 
   Future<String> getJsonData() async {
     res = await http.get(
@@ -85,20 +81,21 @@ class MovielyState extends State<Moviely> {
                   //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     TextField(
-                      decoration: InputDecoration(labelText: 'Movie Name'),
-                      style: TextStyle(
-                        fontSize: 20,
-                      ),
+                      decoration: InputDecoration(
+                          labelText: 'Movie Name',
+                          fillColor: Colors.redAccent,
+                          focusColor: Colors.redAccent,
+                          hoverColor: Colors.redAccent),
+                      style: TextStyle(fontSize: 20, color: Colors.redAccent),
                       controller: movieController,
                     ),
                     Padding(padding: EdgeInsets.only(top: 10)),
                     RaisedButton(
                       elevation: 5,
+                      color: Colors.redAccent,
                       child: Text(
                         "Find",
-                        style: TextStyle(
-                          fontSize: 20,
-                        ),
+                        style: TextStyle(fontSize: 20),
                       ),
                       onPressed: () =>
                           movieController.text != null ? getJsonData() : "",
